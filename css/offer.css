@@ -1,0 +1,52 @@
+.offerBtn {
+    transition: all .3s;
+}
+
+.offerBtn:hover {
+    opacity: 0.8;
+    transform: translateY(5%);
+}
+.offerMiddle{
+    width: 88.2%;
+    left: 6%;
+    bottom: 28.5%;
+    -webkit-mask: url("../images/btn_01.png") no-repeat center center;
+  mask: url("../images/btn_01.png") no-repeat center center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.offer01{
+        width: 88.2%;
+    left: 6%;
+    bottom: 18%;  -webkit-mask: url("../images/btn_02.png") no-repeat center center;
+  mask: url("../images/btn_02.png") no-repeat center center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.offer02{
+       width: 88.2%;
+    left: 5.5%;
+    bottom: 12%;  -webkit-mask: url("../images/btn_02.png") no-repeat center center;
+  mask: url("../images/btn_02.png") no-repeat center center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.offer03{
+    width: 46.1%;
+    left: 3%;
+    bottom: 11%;  -webkit-mask: url("../images/btn_03.png") no-repeat center center;
+  mask: url("../images/btn_03.png") no-repeat center center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+.offer04{
+    width: 46.1%;
+    right: 3%;
+    bottom: 11%;  -webkit-mask: url("../images/btn_04.png") no-repeat center center;
+  mask: url("../images/btn_04.png") no-repeat center center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}

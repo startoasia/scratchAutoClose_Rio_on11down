@@ -1,0 +1,40 @@
+figure {
+        margin: 0;
+}
+
+.scratch_01 {
+        width: 98.8%;
+        left: -1%;
+        bottom: 35.5%;
+}
+
+#bridge1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        /* 這裡輸入 【底圖】 的連結 */
+        background-image: url("../images/BG/LP_03_scratch_02.png");
+        /* 這裡輸入 【底圖】 的連結 【-webkit-】是為了要符合chrome */
+        background-image: -webkit-image-set(url("../images/BG/LP_03_scratch_02.png") 1x,
+                        url("../images/BG/LP_03_scratch_02.png") 2x);
+        background-size: cover;
+        width: 100%;
+        max-width: 988px;
+        cursor: crosshair;
+        /* 刮刮樂的圖示 【可自行更換】 */
+        cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/circular-cursor.png) 53 53,
+                crosshair;
+}
+
+.scratch_final {
+        overflow: hidden;
+        max-height: 0;
+        transition: all 2s;
+        /* clip-path: inset(0 0 100% 0); */
+}
+.scratch_final--show{
+        max-height: 100000px;
+        /* clip-path: inset(0 0 0 0); */
+}

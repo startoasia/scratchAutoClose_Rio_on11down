@@ -1,0 +1,254 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    /* vertical-align: middle; */
+    display: block;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+/* 【以上內容勿動!!!  有關基本樣式設定】 */
+/* 開版設定 */
+.wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* 【超過】 開版範圍 就不呈現 */
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+/* 定位 */
+
+
+.thing_01 {
+    width: 40.3%;
+    top: 27%;
+    left: 7%;
+}
+
+.thing_02 {
+    width: 49.7%;
+    top: 27.5%;
+    left: 38.5%;
+}
+
+.thing_03 {
+    width: 46.5%;
+    top: 39.5%;
+    left: 30%;
+}
+
+.thing_04 {
+    width: 38.1%;
+    bottom: 14.5%;
+    right: 0%;
+}
+
+.thing_05 {
+    width: 57.5%;
+    bottom: 10%;
+    left: 1%;
+}
+
+.thing_06 {
+    width: 33.4%;
+    top: 70%;
+    left: 10%;
+}
+
+.thing_07 {
+    width: 33.4%;
+    top: 76%;
+    left: 34%;
+}
+
+.thing_08 {
+    width: 33.4%;
+    top: 65%;
+    left: 57.5%;
+}
+
+.thing_09-1 {
+    width: 5.8%;
+    top: 7%;
+    left: 57.5%;
+    pointer-events: none;
+}
+
+.thing_09-2 {
+    width: 5.8%;
+    top: 26.5%;
+    left: 84%;
+    pointer-events: none;
+}
+
+.thing_09-3 {
+    width: 5.8%;
+    top: 42%;
+    left: 28%;
+    pointer-events: none;
+}
+
+.pointBtn1 {
+    width: 47%;
+    height: 20%;
+    left: 24%;
+    top: 2%;
+}
+
+.pointBtn2 {
+    width: 40%;
+    height: 20%;
+    left: 0;
+    top: 38%;
+}
+
+.pointBtn3 {
+    width: 47%;
+    height: 19%;
+    right: 6%;
+    top: 23%;
+}
+
+.thing_11 {
+    width: 53.6%;
+    top: 34.5%;
+    left: 2%;
+}
+
+.thing_12 {
+    width: 53.6%;
+    top: 46.75%;
+    left: 2%;
+}
+
+.thing_13 {
+    width: 53.6%;
+    top: 59.5%;
+    left: 2%;
+}
+
+.thing_14 {
+    width: 53.6%;
+    top: 72.5%;
+    left: 2%;
+}
+
+.thing_15 {
+    width: 24.9%;
+    top: 29.5%;
+    left: 73%;
+}
+
+.thing_16 {
+    width: 69.7%;
+    bottom: -2%;
+    left: 15%;
+    z-index: 1;
+}
+
+.thing15-1 {
+    width: 100%;
+    left: 0%;
+    top: 32%;
+}
+
+.thing14-1 {
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+
+}
+
+
+.card01 {
+    width: 56%;
+    left: 7.4%;
+    top: 46.8%;
+}
+
+.card02 {
+    width: 56%;
+    left: 46.4%;
+    top: 60.8%;
+}
+
+.card03 {
+    width: 56.5%;
+    left: 3%;
+    top: 77.4%;
+}
+
+.cardBG {
+    width: 93.3%;
+    right: 0;
+    top: 34.5%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.pointer_01 {
+    width: 25.5%;
+    top: 52.5%;
+    left: 24%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.pointer_02 {
+    width: 25.5%;
+    bottom: 27.8%;
+    right: 13%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.pointer_03 {
+    width: 25.5%;
+    bottom: 11.1%;
+    left: 18%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.videoControl {
+    width: 85%;
+    left: 7.5%;
+    bottom: 3.5%;
+}

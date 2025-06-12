@@ -1,0 +1,31 @@
+nav{
+    position: sticky;
+    margin: 0 auto;
+    top: 0;
+    /* 依照設計稿 1920 或 1000【兩者擇一】 */
+    /* 不用的請【註解】  即可 */
+    max-width: 1000px;
+    z-index: 10;
+}
+
+.navList{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+display: flex;
+
+}
+.navItem{
+    width: 33.3333%;
+}
+.navLink{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#target2{
+    position: absolute;
+    bottom: 28%;
+}

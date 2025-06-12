@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script type="text/javascript">
+        var reurl = new Array();
+
+        // 取得url的參數
+        var oURL = GetURLParameter('fromSample');
+
+        //＊＊＊＊＊ 請輸入要跳轉網址URL ＊＊＊＊＊  
+        reurl[0] = 'https://www.ozio.tw/MJWEXN/LP01/' + oURL;
+        //可以再新增, 唯, [0], [1], [2], [3], [4], 這個不能跳號  
+
+        var maxNum = reurl.length - 1;
+        var minNum = 0;
+        var n = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+
+
+        var nowTime = new Date()
+
+        // ==== 開始跳轉時間 ====
+        var setTime = new Date(2025, 5, 24, 9, 59, 59)  //2021/2/25/17:24:00
+        // new Date(年,月,日,時,分,秒)
+        // p.s: JavaScript 表達月份 (month) 是從 0 到 11，0 是一月；11 是十二月。
+
+        // ===================
+
+        if (nowTime >= setTime) {
+            location.href = reurl[n];
+        }
+
+
+        // 取得url的參數函式
+        function GetURLParameter(oStr) {
+
+            var utm_source = "utm_source";
+            var utm_medium = "utm_medium";
+            var utm_campaign = "utm_campaign";
+            var utm_content = "utm_content";
+
+            var t_Str = "?";
+            var utm_check = 0;
+            var par_check = 0;
+
+            // Create a test URLSearchParams object
+            var sPageURL = new URLSearchParams(window.location.search.substring(1));
+
+            // Log the values
+            sPageURL.forEach(function (value, key) {
+                //console.log(value, key);
+
+                switch (key.toLowerCase()) {
+                    case 'utm_source':
+                        utm_check++;
+                        break;
+                    case 'utm_medium':
+                        utm_check++;
+                        break;
+                    case 'utm_campaign':
+                        if (oStr !== "") {
+                            value = value + "_" + oStr;
+                        }
+                        utm_check++;
+                        break;
+                    default:
+                        break;
+                }
+
+                t_Str = t_Str + key + "=" + value + "&";
+                par_check++;
+
+            });
+
+            if (t_Str == "?" || utm_check < 1) {
+                //＊＊＊＊＊ 若沒帶參數來到此頁面時，希望自動幫忙帶入的參數資訊可開啟此段程式，關閉下面那段 ＊＊＊＊＊
+                // if (par_check > 0) {
+                //     t_Str = t_Str.substring(0, t_Str.length - 1) + "&utm_source=參數一&utm_medium=參數二&utm_campaign=參數三";
+                // } else {
+                //     t_Str = t_Str + "utm_source=參數一&utm_medium=參數二&utm_campaign=參數三";
+                // }
+
+                //＊＊＊＊＊ 若沒帶參數來到此頁面時，且不想帶其他參數時，則關閉上面的程式，開啟下面的程式 ＊＊＊＊＊
+                t_Str = t_Str.substring(0, t_Str.length - 1) + "";
+            } else {
+                t_Str = t_Str.substring(0, t_Str.length - 1)
+            }
+
+            return t_Str;
+
+        }
+
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 購物車監測 -->
+    <meta name="referrer" content="unsafe-url" />
+    <title>618驚喜開刮｜撫紋保濕組下殺51折</title>
+    <!--描述-->
+    <meta name="description"
+        content="叮咚更凍齡！日本超人氣抗老保養，「OZIO蜂王乳凝露」系列熱銷1600萬瓶，由抗老專家OZIO歐姬兒開發製造，王宇婕女星代言，深層浸透肌膚底層，保濕鎖水、撫平細紋，有效改善乾老皺。凍齡保養靠OZIO一瓶搞定，時間可以停留！">
+    <!--關鍵字-->
+    <meta name="keywords"
+        content="歐姬兒, OZIO, 日本保養品, 日系藥妝推薦, 蜂王乳凝露, 蜂王乳凝露EX, 蜂王乳極致滋養精華, 膠原蛋白, 神經醯胺, 溫感, 抗老保養, 撫平細紋, 保濕, 春夏保養, 換季保養, 凍齡保養, 媽媽保養 ,免運, 增量, 撫皺, 撫紋, 優惠, 活動, 特價, 叮咚凍齡, 時間可以停留, 凝露, allinone, 懶人保養">
+    <!--縮圖-->
+    <meta property="og:image" content="預覽圖 URL" />
+    <!--icon-->
+    <link rel="shortcut icon" href="https://www.ozio.tw/user_data/packages/defaultta/img/common/favicon.ico">
+
+
+    <!-- 【外部套件】CSS導入 S -->
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- /*畫面跳到指定位置*/ -->
+    <script>
+        $(document).ready(function () {
+            $("a.scrollLink").click(function (event) {
+                event.preventDefault();
+                $("html, body").animate(
+                    {
+                        /* 0 可以替換 $("class名稱(要記得加.)").height() 【header有需要固定在最上方時 使用這個👇】*/
+                        scrollTop: $($(this).attr("href")).offset().top - $("nav").height(),
+                        // 【header不用固定在最上方時 使用這個👇】
+                        // scrollTop: $($(this).attr("href")).offset().top - 0,
+                    },
+                    400
+                );
+            });
+        });
+    </script>
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- 【外部套件】CSS導入 E-->
+
+    <!-- CSS導入 S -->
+    <!-- 基礎設定 & 定位 -->
+    <link rel="stylesheet" href="css/all.css">
+    <!-- 導覽列 -->
+    <link rel="stylesheet" href="css/nav.css">
+    <!-- 其他 -->
+    <link rel="stylesheet" href="css/other.css">
+    <!-- 購物車 -->
+    <link rel="stylesheet" href="css/offer.css">
+    <!-- 動畫 -->
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/scratch.css">
+    <!-- CSS導入 E-->
+
+
+    <!-- GTM 填寫區 S -->
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MMGGLB');</script>
+    <!-- End Google Tag Manager -->
+    <!-- GTM 填寫區 E-->
+</head>
+
+<body>
+    <!-- GTM 填寫區 S -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMGGLB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- GTM 填寫區 E-->
+
+
+    <nav>
+        <!-- 倒數計時S  不使用時就註解即可 -->
+        <div class="clock-container">618 SALE：<span id="timer"></span></div>
+        <!-- 倒數計時E -->
+
+        <!-- 導覽列S -->
+        <!-- 請看導覽列模板 -->
+        <!-- 導覽列E -->
+        <section class="bg LP_01">
+            <div class="container relative">
+                <img class="lazy" data-src="./images/BG/LP_01.png" width="1000" height="134">
+                <ul class="navList">
+                    <li class="navItem"><a href="#target1" class="scrollLink navLink"></a></li>
+                    <li class="navItem"><a href="#target2" class="scrollLink navLink"></a></li>
+                    <li class="navItem"><a href="#offer" class="scrollLink navLink"></a></li>
+                </ul>
+            </div>
+        </section>
+    </nav>
+
+    <div class="wrap">
+
+        <section class="bg LP_02">
+            <div class="container relative">
+                <img class="lazy" data-src="./images/BG/LP_02.png" width="1000" height="1484">
+                <img class="lazy absolute thing_01" data-src="images/thing_01.png" width="403" height="390">
+                <img class="lazy absolute thing_02" data-src="images/thing_02.png" width="497" height="330">
+                <img class="lazy absolute thing_03" data-src="images/thing_03.png" width="465" height="432">
+                <img class="lazy absolute thing_04" data-src="images/thing_04.png" width="381" height="622">
+                <img class="lazy absolute thing_05" data-src="images/thing_05.png" width="575" height="473">
+            </div>
+        </section>
+
+
+
+        <section class="bg LP_03_scratch_01" id="target1">
+            <div class="container relative">
+                <img class="lazy" data-src="./images/BG/LP_03_scratch_BG.png" width="1000" height="1237">
+                <!-- 刮刮樂 1 -->
+                <div class="absolute scratch_01">
+                    <figure>
+                        <!-- 這裡尺寸必須要跟圖片大小一樣 如上圖-->
+                        <!-- 且 ID 要不一樣 後面【JS】會使用到 -->
+                        <canvas id="bridge1" width="988px" height="883px"></canvas>
+                    </figure>
+                </div>
+                <!-- 刮刮樂 1 -->
+            </div>
+        </section>
+
+        <div class="scratch_final ">
+            <div id="ctaStart"></div>
+
+            <section class="bg LP_03_scratch_03">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_03_scratch_03.png" width="1000" height="2463">
+                    <div class="absolute videoControl">
+                        <video controls class="lazy" data-src="./images/video.mp4" width="100%" height="100%"
+                            playsinline muted autoplay loop>
+                        </video>
+                    </div>
+                </div>
+            </section>
+            <!-- offerMiddle -->
+            <section class="bg LP_04">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_04.png" width="1000" height="2052">
+                    <a href="#offer" class="absolute scrollLink offerBtn offerMiddle">
+                        <div class="light">
+                            <img class="lazy" data-src="./images/btn_01.png" alt="" width="882" height="172">
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <!-- offerMiddle -->
+            <section class="bg LP_05">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_05.png" width="1000" height="1036">
+                </div>
+            </section>
+            <section class="bg LP_06">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_06.png" width="1000" height="1855">
+                    <img class="lazy absolute thing_06" data-src="images/thing_06.png" width="334" height="334">
+                    <img class="lazy absolute thing_07" data-src="images/thing_07.png" width="334" height="334">
+                    <img class="lazy absolute thing_08" data-src="images/thing_08.png" width="334" height="334">
+                </div>
+            </section>
+            <section class="bg LP_07">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_07.png" width="1000" height="1325">
+                    <div id="target2"></div>
+                </div>
+            </section>
+            <section class="bg LP_08">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_08.png" width="1000" height="1274">
+                    <img class="lazy absolute thing_09-1" data-src="images/thing_09.png" width="58" height="197">
+                    <img class="lazy absolute thing_09-2" data-src="images/thing_09.png" width="58" height="197">
+                    <img class="lazy absolute thing_09-3" data-src="images/thing_09.png" width="58" height="197">
+                    <a href="#point1" class="absolute scrollLink pointBtn1"></a>
+                    <a href="#point2" class="absolute scrollLink pointBtn2"></a>
+                    <a href="#point3" class="absolute scrollLink pointBtn3"></a>
+                </div>
+            </section>
+            <section class="bg LP_09" id="point1">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_09.png" width="1000" height="2448">
+                    <img class="lazy absolute cardBG" data-src="./images/thing10BG.png" alt="" width="933"
+                        height="1418">
+                    <img class="lazy absolute pointer_01 card_pointer" data-src="./images/thing_10.png" alt=""
+                        width="255" height="143">
+                    <img class="lazy absolute pointer_02 card_pointer" data-src="./images/thing_10.png" alt=""
+                        width="255" height="143">
+                    <img class="lazy absolute pointer_03 card_pointer" data-src="./images/thing_10.png" alt=""
+                        width="255" height="143">
+
+                    <div class="absolute card01  card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="./images/change01.png" alt="">
+                            </div>
+                            <div class="card-back">
+                                <img src="./images/thing_10_01.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute card02  card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="./images/change02.png" alt="">
+                            </div>
+                            <div class="card-back">
+                                <img src="./images/thing_10_02.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute card03  card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="./images/change03.png" alt="">
+                            </div>
+                            <div class="card-back">
+                                <img src="./images/thing_10_03.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section class="bg LP_10" id="point2">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_10.png" width="1000" height="1698">
+                    <img class="lazy absolute thing_11" data-src="images/thing_11.png" data-aos="fade-right" width="536"
+                        height="189">
+                    <img class="lazy absolute thing_12" data-src="images/thing_12.png" data-aos="fade-right"
+                        data-aos-delay="100" width="536" height="192">
+                    <img class="lazy absolute thing_13" data-src="images/thing_13.png" data-aos="fade-right"
+                        data-aos-delay="200" width="536" height="189">
+                    <img class="lazy absolute thing_14" data-src="images/thing_14.png" data-aos="fade-right"
+                        data-aos-delay="300" width="536" height="195">
+                </div>
+            </section>
+            <section class="bg LP_11" id="point3">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_11.png" width="1000" height="1289">
+                </div>
+            </section>
+            <section class="bg LP_12">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_12.png" width="1000" height="2001">
+                    <img class="lazy absolute thing_15 bounce" data-src="images/thing_15.png" width="249" height="289">
+                </div>
+            </section>
+            <section class="bg LP_13">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_13.png" width="1000" height="2724">
+                    <img class="lazy absolute thing_16" data-src="images/thing_16.png" width="697" height="198">
+                </div>
+            </section>
+            <section class="bg LP_14_video">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_14_video.png" width="1000" height="562">
+                    <!-- youtube -->
+                    <div class="absolute thing14-1">
+                        <iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/xE-BPN9szoo?mute=1&autoplay=1&loop=1&playlist=xE-BPN9szoo"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg LP_15">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_15.png" width="1000" height="1453">
+                    <!-- 輪播圖 S -->
+                    <div class="absolute thing15-1">
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <!-- 自由編輯區 S -->
+                                <div class="swiper-slide">
+                                    <img src="./images/thing_17.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/thing_18.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/thing_19.png" alt="">
+                                </div>
+
+
+                                <!-- 自由編輯區 E -->
+                            </div>
+                        </div>
+                        <!-- <div class="swiper-button-next "></div> -->
+                        <!-- <div class="swiper-button-prev "></div> -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <!-- 輪播圖 E -->
+                </div>
+            </section>
+
+            <div id="ctaEnd"></div>
+
+            <section class="bg LP_16" data-aos="fade-up">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_16.png" width="1000" height="1451">
+                </div>
+            </section>
+
+
+            <!-- offer01 -->
+            <section class="bg LP_17" id="offer">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_17.png" width="1000" height="2401">
+                    <a href="#lp_form" onclick="acsSelect('MJ61825-1');" class="absolute scrollLink offerBtn offer01 ">
+                        <div class="light">
+                            <img class="lazy" data-src="./images/btn_02.png" width="882" height="171">
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- offer01 -->
+
+            <!-- offer02 -->
+            <section class="bg LP_18">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_18.png" width="1000" height="1006">
+                    <a href="#lp_form" onclick="acsSelect('rjmN3');" class="absolute scrollLink offerBtn offer02">
+                        <div class="light">
+                            <img class="lazy" data-src="./images/btn_02.png" width="882" height="171">
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- offer02 -->
+
+            <!-- offer03 & offer04 -->
+            <section class="bg LP_19">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_19.png" width="1000" height="980">
+                    <a href="#lp_form" onclick="acsSelect('rjmN2');" class="absolute scrollLink offerBtn offer03">
+                        <div class="light">
+                            <img class="lazy" data-src="./images/btn_03.png" width="461" height="90">
+                        </div>
+                    </a>
+                    <a href="#lp_form" onclick="acsSelect('4560313624455-M');" class="absolute scrollLink offerBtn offer04">
+                        <div class="light">
+                            <img class="lazy" data-src="./images/btn_04.png" width="461" height="90">
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- offer03 & offer04 -->
+
+            <section class="bg LP_20">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_20.png" width="1000" height="374">
+                </div>
+            </section>
+
+            <section class="bg LP_21_tel">
+                <div class="container relative">
+                    <a href="tel:0809-091-686">
+                        <img class="lazy" data-src="./images/BG/LP_21_tel.png" width="1000" height="177">
+                    </a>
+                </div>
+            </section>
+
+            <section class="bg LP_22_mail">
+                <div class="container relative">
+                    <a href="mailto:nachulife.taiwan@ozio.tw">
+                        <img class="lazy" data-src="./images/BG/LP_22_mail.png" width="1000" height="136">
+                    </a>
+                </div>
+            </section>
+
+            <section class="bg LP_23">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_23.png" width="1000" height="1139">
+                </div>
+            </section>
+
+            <section class="bg LP_24">
+                <div class="container relative">
+                    <img class="lazy" data-src="./images/BG/LP_24.png" width="1000" height="801">
+                </div>
+            </section>
+
+
+            <!-- ※LP用|編集削除禁止 -->
+            <div id="acs_lp_form"></div>
+            <script src="https://code.cros.tw/init.js"></script>
+            <!-- ※LP用|編集削除禁止 -->
+
+
+        </div>
+    </div>
+    <!-- 彈跳視窗【結構】S -->
+    <section class="popBG  pop01">
+        <div class="popContainer relative">
+            <div class="xmarkControl">
+                <i class="fa-solid fa-xmark  js-xmark" onclick="popUpClose('.pop01')"></i>
+
+            </div>
+            <!-- 自由編輯區 S -->
+            <div class="box1" style="height: 500px;background: red;"></div>
+            <div class="box1" style="height: 500px;background: green;"></div>
+            <div class="box1" style="height: 500px;background: peru;"></div>
+            <!-- 自由編輯區 E -->
+        </div>
+    </section>
+    <!-- 彈跳視窗【結構】E -->
+
+
+
+
+
+
+
+
+    <!-- 【外部套件】JS導入 S -->
+    <!-- WOW -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>new WOW().init();</script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+            offset: 120, // offset (in px) from the original trigger point
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 1000, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: false, // whether animation should happen only once - while scrolling down
+            mirror: false, // whether elements should animate out while scrolling past them
+            anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+        });
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: 'fade',
+            // 動畫過度:單位豪秒
+            speed: 1000,
+            // 是否重複撥放
+            loop: true,
+            // 自動撥放
+            autoplay: {
+                // 每張輪播圖要【停留】多久
+                delay: 1500,
+                // 當使用者點及切換時，是否停止輪播功能
+                disableOnInteraction: false,
+            },
+            // 頁籤
+            pagination: {
+                el: ".thing15-1 .swiper-pagination",
+            },
+            // 左右按鈕
+            navigation: {
+                nextEl: ".thing15-1 .swiper-button-next",
+                prevEl: ".thing15-1 .swiper-button-prev",
+            },
+        });
+    </script>
+    <!-- 【外部套件】JS導入 E-->
+
+    <!-- JS導入 S -->
+
+    <!-- 圖片加載延遲 -->
+    <script src="js/lazy.js"></script>
+
+    <!-- 倒數計時  -->
+    <script src="js/clock.js"></script>
+
+    <!-- CTA -->
+    <script>
+        let CTAdata = {
+            variation: 2,//有3種模式請看Notion
+            href: "#offer",
+            lnkID: "lnk_99",
+            pastr: "LP名稱 EX:QQ01",
+            // spImg: "手機顯示圖片",
+            spImg: "./images/CTA.png",
+            // pcImg: "電腦顯示圖片",
+            pcImg: "./images/CTA.png",
+        }
+    </script>
+    <!-- 不使用時就註解【下方】即可 -->
+    <script src="js/CTA.js"></script>
+
+    <!-- 若要設定時間來控制CTA，請使用下方的【CTA_control.js】 
+        上方的【務必註解】只能兩者擇一來使用 -->
+    <!-- <script src="js/CTA_control.js"></script> -->
+
+    <!-- 其他設定 -->
+    <script src="js/all.js"></script>
+    <!-- 放入JS檔案 -->
+    <script src="js/scratch.js"></script>
+    <script>
+        const bridge1 = new brigeGo('bridge1', 0, 60);
+
+    </script>
+    <!-- JS導入 E -->
+
+
+</body>
+
+</html>

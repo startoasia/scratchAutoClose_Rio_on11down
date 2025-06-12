@@ -1,0 +1,179 @@
+/* 倒數計時 S */
+.clock-container {
+    padding: 0.15em 0;
+    /* 導角 用法跟 padding依樣  */
+    /* border-radius: 0.1em; */
+    text-align: center;
+    font-weight: bold;
+    /* 調整字體大小 */
+    /* 文字顏色 */
+    color: #ffffff;
+    /* 背景顏色 */
+    background: #ff0026;
+    font-size: 3rem;
+    display: none;
+}
+
+#timer {
+    border-radius: 1.5px;
+    font-weight: bold;
+    margin: .5 .5em;
+    padding: 0 .5em;
+    letter-spacing: 0.1em;
+    /* 若時間文字顏色，跟【倒數計時】文字 有不同時使用 */
+    /* color: #00ff95; */
+}
+
+@media (max-width:549px) {
+    .clock-container {
+        /* 調整字體大小 */
+        font-size: 1.15rem;
+    }
+}
+
+/* 倒數計時 E */
+
+/* 收合按鈕 S */
+.close_img {
+    width: 100%;
+    max-height: 0;
+    transition: max-height .8s cubic-bezier(1, 0.2, 0.2, 1);
+    overflow: hidden;
+}
+
+.show {
+    max-height: 5000px;
+}
+
+/* 收合按鈕 E */
+
+/* 彈跳視窗S */
+.popBG {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0%;
+    top: 0%;
+    z-index: 1000;
+    background-color: rgb(0, 0, 0, 0.7);
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popControl--active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popContainer {
+    max-width: 1000px;
+    width: 100%;
+    /* 這裡回推高度要跟【js-xmark】的字體大小一致 且要【負數】 */
+    margin: -3rem auto 0 auto;
+
+}
+
+.xmarkControl {
+    position: sticky;
+    top: 2%;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+.js-xmark {
+    position: absolute;
+    right: 2%;
+    font-size: 3rem;
+    padding: 0 0.5%;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    transition: all .3s;
+}
+
+.js-xmark:hover {
+    background-color: #fff;
+    color: #000;
+    rotate: 180deg;
+}
+
+@media (max-width:768px) {
+    .popContainer {
+        width: 90%;
+        /* 這裡回推高度要跟【js-xmark】的字體大小一致 且要【負數】 */
+        margin: -2.5rem auto 0 auto;
+
+    }
+
+    .js-xmark {
+        font-size: 2.5rem;
+        padding: 0 1%;
+    }
+}
+
+/* 彈跳視窗E */
+
+
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px !important;
+}
+
+.swiper-pagination {
+    bottom: -2.5% !important;
+}
+
+@media (max-width:768px) {
+    .swiper-pagination {
+        bottom: -5% !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 12.5px;
+        height: 12.5px;
+        margin: 0 5px !important;
+    }
+}
+
+
+.card {
+   
+    /* perspective: 1000px; */
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    position: relative;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 100%;
+}
+
+.card-front {
+    /* background-color: #fb0a0a; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back {
+    /* background-color: #009dff; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
